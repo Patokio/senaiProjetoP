@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.loginController">
+   <children>
+      <ImageView fitHeight="155.0" fitWidth="297.0" layoutX="42.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../Documents/igaem.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtUsuario" layoutX="29.0" layoutY="277.0" prefHeight="25.0" prefWidth="303.0" promptText="Informe seu usuario" />
+      <PasswordField fx:id="txtSenha" layoutX="29.0" layoutY="342.0" prefHeight="25.0" prefWidth="303.0" promptText="Informe sua senha" />
+      <Label layoutX="29.0" layoutY="250.0" text="Usuário" />
+      <Label layoutX="29.0" layoutY="315.0" text="Senha" />
+      <Button layoutX="214.0" layoutY="402.0" mnemonicParsing="false" onAction="#entrar" text="Entrar" />
+      <Button layoutX="100.0" layoutY="402.0" mnemonicParsing="false" onAction="#sair" text="Sair" />
+   </children>
+</AnchorPane>
