@@ -12,6 +12,7 @@ public class calularIMCController {
 	    @FXML private TextField txtAltura;
 	    @FXML private TextField txtNome;
 	    @FXML private TextField txtPeso;
+	    @FXML private Button btnVoltar;
 
 		public void calcularIMC() {
 			String nome = txtNome.getText();
@@ -37,4 +38,9 @@ public class calularIMCController {
 				return "Obsidade Grau III";
 			}
 		}
+		
+		@FXML
+	    private void initialize() {
+	    	btnVoltar.setOnAction(e -> {aplicativoController.voltar(btnVoltar);});
+	    }
 }

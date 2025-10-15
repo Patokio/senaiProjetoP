@@ -4,17 +4,20 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
-
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
 
 
 public class jogoController {
+	
+	 @FXML
+	 private Button btnVoltar;
 	 @FXML
 	    private Canvas canva;
 
@@ -26,13 +29,17 @@ public class jogoController {
 		private int pontuacao = 0;
 		private ArrayList<Obstaculo> obstaculos= new ArrayList();
 		private Random random = new Random();
-		private boolean esquerda,direita,turbo;
+		private boolean esquerda,direita;
+		private boolean turb = false;
 		
 		private Image imagemPlayer;
 		private Image imagemObstaculo;
 		
 		@FXML
 		public void initialize() {
+			
+		    btnVoltar.setOnAction(e -> {aplicativoController.voltar(btnVoltar);});
+		    
 			InputStream playerStream=getClass().getResourceAsStream("f1_vermelho.png");
 			InputStream obstaculoStream=getClass().getResourceAsStream("f1_azul.png");
 			imagemPlayer = new Image(playerStream);
@@ -49,7 +56,7 @@ public class jogoController {
 			canva.setOnKeyPressed(e->{
 				if(e.getCode()==KeyCode.LEFT){ esquerda=true;}
 				if(e.getCode()==KeyCode.RIGHT){ direita=true;}
-				if(e.getCode()==KeyCode.T) {turbo=true;}
+				if(e.getCode()==KeyCode.T) {turb=true;}
 			});
 			
 			/*RECONHECE AS TECLAS DIREITA E ESQUERDA AO SEREM SOLTAS*/
@@ -83,7 +90,7 @@ public class jogoController {
 					}
 					
 					if(now - spawTurbo > intervaloSpaw * 30) {
-						turbo = false;
+						turb = false;
 						spawTurbo = now;
 					}
 
