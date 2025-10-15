@@ -18,15 +18,15 @@ public class jogoController {
 	 @FXML
 	    private Canvas canva;
 
-		private double playerX=200;
-		private final double playerY=500;
-		private final double raio=16;
-		private final double larguraTela=360;
-		private final double alturaTela=600;
-		private int pontuacao=0;
+		private double playerX = 200;
+		private final double playerY = 500;
+		private final double raio = 16;
+		private final double larguraTela = 360;
+		private final double alturaTela = 600;
+		private int pontuacao = 0;
 		private ArrayList<Obstaculo> obstaculos= new ArrayList();
 		private Random random = new Random();
-		private boolean esquerda,direita;
+		private boolean esquerda,direita,turbo;
 		
 		private Image imagemPlayer;
 		private Image imagemObstaculo;
@@ -49,16 +49,18 @@ public class jogoController {
 			canva.setOnKeyPressed(e->{
 				if(e.getCode()==KeyCode.LEFT){ esquerda=true;}
 				if(e.getCode()==KeyCode.RIGHT){ direita=true;}
+				if(e.getCode()==KeyCode.T) {turbo=true;}
 			});
 			
 			/*RECONHECE AS TECLAS DIREITA E ESQUERDA AO SEREM SOLTAS*/
 			canva.setOnKeyReleased(e->{
 				if(e.getCode()==KeyCode.LEFT){ esquerda=false;}
 				if(e.getCode()==KeyCode.RIGHT){ direita=false;}
+				//if(e.getCode()==KeyCode.T) {turbo= false;}
 			});
 			
 			AnimationTimer timer = new AnimationTimer() {
-				long ultimoSpaw=0;
+				long ultimoSpaw=0, spawTurbo = 0;
 				long intervaloSpaw=1_000_000_000;
 				
 				@Override
@@ -66,12 +68,24 @@ public class jogoController {
 					atualizar();
 					desenhar(gc);
 					long velocidade=1_000_000_000;
-					if (now - ultimoSpaw > intervaloSpaw) {					
-
-					obstaculos.add(new Obstaculo(random.nextInt((int) larguraTela - 40), -40));				
-					ultimoSpaw=now;
+					
+					// spawna pra krlh
+					/*if(turbo == true) {
+						obstaculos.add(new Obstaculo(random.nextInt((int) larguraTela - 80), -80));				
+						ultimoSpaw=now;
+					} else if(now - ultimoSpaw > intervaloSpaw) {
+						obstaculos.add(new Obstaculo(random.nextInt((int) larguraTela - 40), -40));				
+						ultimoSpaw=now;
+					}*/
+					if (now - ultimoSpaw > intervaloSpaw) {
+						obstaculos.add(new Obstaculo(random.nextInt((int) larguraTela - 40), -40));				
+						ultimoSpaw=now;
 					}
 					
+					if(now - spawTurbo > intervaloSpaw * 30) {
+						turbo = false;
+						spawTurbo = now;
+					}
 
 				}
 				
@@ -102,6 +116,12 @@ public class jogoController {
 			if(direita && playerX+raio < larguraTela)  playerX+=5;
 			
 			double velocidade=4;
+			
+			/*if(turbo == true) {
+				velocidade = 12;
+			} else {
+				velocidade = 4;
+			}*/
 			
 			Iterator<Obstaculo> it = obstaculos.iterator();
 			

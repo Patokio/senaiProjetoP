@@ -24,7 +24,12 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="btnResetar" layoutX="21.0" layoutY="493.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="318.0" text="Resetar">
+      <Button fx:id="btnResetar" layoutX="21.0" layoutY="456.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="318.0" text="Resetar">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnVoltar" layoutX="21.0" layoutY="504.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="318.0" text="Voltar ao Menu">
          <font>
             <Font size="18.0" />
          </font>

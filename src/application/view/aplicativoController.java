@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -54,6 +55,38 @@ public class aplicativoController {
     private void abrirTiro() {
     	carregarTela("jogoTiro.fxml");
     }
+    
+    @FXML
+    public static void voltar(Button btnVoltar) {
+    	try {
+    		Stage stage = (Stage) btnVoltar.getScene().getWindow();
+    		AnchorPane conteudoPane = (AnchorPane) stage.getScene().lookup("#conteudoPane");
+    		Parent fxml = FXMLLoader.load(aplicativoController.class.getResource("aplicativo.fxml"));
+    		
+    		conteudoPane.getChildren().setAll(fxml); 
+    	} catch(Exception e) {
+    		e.printStackTrace();
+    	}
+    }
+    /*public static void voltar(String file, AnchorPane pane) {
+    	try {
+    		Parent fxml = FXMLLoader.load(getClass().getResource(file));
+    		pane.getChildren().clear();
+    		pane.getChildren().add(fxml);
+    		
+    		pane.setTopAnchor(fxml,0.0);
+    		pane.setBottomAnchor(fxml,0.0);
+    		pane.setLeftAnchor(fxml,0.0);
+    		pane.setRightAnchor(fxml,0.0);
+    		Scene cena = pane.getScene();
+    		
+    		if (cena != null) {
+    			Stage stage = (Stage) cena.getWindow();
+    		}
+    	} catch(Exception e) {
+    		e.printStackTrace();
+    	}
+    }*/
     
 	@FXML
 	private void initialize() {

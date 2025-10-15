@@ -1,6 +1,7 @@
 package application.view;
 
 import javafx.beans.Observable;
+import application.view.aplicativoController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -31,6 +32,9 @@ public class calculadoraController {
     
     @FXML
     private Button btnResetar;
+    
+    @FXML
+    private Button btnVoltar;
     
     @FXML
     public void Somar() {
@@ -90,6 +94,7 @@ public class calculadoraController {
     	txtSegundoNumero.textProperty().addListener((observable, oldValue, newValue)->{txtSegundoNumero.setText(newValue.replaceAll("[^\\d]",""));});
     	
     	btnResetar.setOnAction(e -> {txtPrimeiroNumero.setText("0");txtSegundoNumero.setText("0");lblResultado.setText("Resultado:");});
+    	btnVoltar.setOnAction(e -> {aplicativoController.voltar(btnVoltar);});
     }
     public static double converterLetraParaNumero(String numero) {
     	try {

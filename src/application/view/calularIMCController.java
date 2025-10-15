@@ -14,10 +14,10 @@ public class calularIMCController {
 	    @FXML private TextField txtPeso;
 
 		public void calcularIMC() {
-			String nome=txtNome.getText();
-			double peso=Double.valueOf(txtPeso.getText());
-			double altura=calculadoraController.converterLetraParaNumero(txtAltura.getText());
-			double imc=peso / (altura*altura);
+			String nome = txtNome.getText();
+			double peso = Double.valueOf(txtPeso.getText());
+			double altura = calculadoraController.converterLetraParaNumero(txtAltura.getText());
+			double imc = peso / (altura*altura);
 			//lblResultado.setText(txtNome.getText()+", O seu IMC é "+String.valueOf(imc)+" "+classificarIMC(imc));
 			lblResultado.setText(
 			String.format(txtNome.getText()+" O seu IMC é  %.2f",imc)+" "+classificarIMC(imc)
