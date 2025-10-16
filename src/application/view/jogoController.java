@@ -30,7 +30,7 @@ public class jogoController {
 		private ArrayList<Obstaculo> obstaculos= new ArrayList();
 		private Random random = new Random();
 		private boolean esquerda,direita;
-		private boolean turb = false;
+		private boolean turbo = false;
 		
 		private Image imagemPlayer;
 		private Image imagemObstaculo;
@@ -56,7 +56,7 @@ public class jogoController {
 			canva.setOnKeyPressed(e->{
 				if(e.getCode()==KeyCode.LEFT){ esquerda=true;}
 				if(e.getCode()==KeyCode.RIGHT){ direita=true;}
-				if(e.getCode()==KeyCode.T) {turb=true;}
+				if(e.getCode()==KeyCode.T) {turbo=true;}
 			});
 			
 			/*RECONHECE AS TECLAS DIREITA E ESQUERDA AO SEREM SOLTAS*/
@@ -90,7 +90,7 @@ public class jogoController {
 					}
 					
 					if(now - spawTurbo > intervaloSpaw * 30) {
-						turb = false;
+						turbo = false;
 						spawTurbo = now;
 					}
 

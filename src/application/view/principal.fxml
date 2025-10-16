@@ -4,14 +4,38 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="360.0" style="-fx-background-color: fff;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label graphicTextGap="12.0" layoutX="83.0" layoutY="124.0" text="Bem-Vindo ao aplicativo">
+      <ImageView fitHeight="600.0" fitWidth="360.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../Downloads/plano_fundo_p.png" />
+         </image>
+      </ImageView>
+      <Label graphicTextGap="12.0" layoutX="83.0" layoutY="124.0" text="Bem-Vindo ao PatoDiver">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
+         <textFill>
+            <LinearGradient endX="0.47867298578199047" endY="1.0" startX="0.46919431279620855">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8815789222717285" green="0.048976607620716095" blue="0.048976607620716095" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.7599999904632568" green="0.6405714154243469" blue="0.25839999318122864" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
       <ImageView fitHeight="101.0" fitWidth="348.0" layoutX="6.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
          <image>

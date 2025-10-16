@@ -9,6 +9,7 @@ import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
@@ -17,6 +18,8 @@ import javafx.scene.paint.Color;
 public class jogoTiroController {
 	 @FXML
 	    private Canvas canva;
+	 @FXML
+	    private Button btnVoltar;
 
 		private double playerX=200;
 		private final double playerY=500;
@@ -35,6 +38,7 @@ public class jogoTiroController {
 		public void initialize() {
 	        imagemPlayer = new Image(getClass().getResourceAsStream("nave.png"));
 	        imagemObstaculo = new Image(getClass().getResourceAsStream("nav_et2.png"));
+	        btnVoltar.setOnAction(e -> {aplicativoController.voltar(btnVoltar);});
 
 	        canva.setFocusTraversable(true);
 	        canva.requestFocus();

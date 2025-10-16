@@ -10,6 +10,11 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.loginController">
    <children>
+      <ImageView fitHeight="600.0" fitWidth="360.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../Downloads/plano_fundo_p.png" />
+         </image>
+      </ImageView>
       <ImageView fitHeight="155.0" fitWidth="297.0" layoutX="42.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../Documents/igaem.jpg" />

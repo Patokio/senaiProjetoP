@@ -57,6 +57,14 @@ public class aplicativoController {
     }
     
     @FXML
+    private void abrirMedia() {
+    	carregarTela("calcularMedia.fxml");
+    }
+    @FXML
+    private void abrirIdade() {
+    	carregarTela("idade.fxml");
+    }
+    @FXML
     public static void voltar(Button btnVoltar) {
     	try {
     		Stage stage = (Stage) btnVoltar.getScene().getWindow();

@@ -1,30 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="conteudoPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.aplicativoController">
    <children>
+      <ImageView fitHeight="600.0" fitWidth="360.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../Downloads/plano_fundo_p.png" />
+         </image>
+      </ImageView>
       <Button layoutX="68.0" layoutY="167.0" mnemonicParsing="false" onAction="#abrirCalculadora" prefHeight="25.0" prefWidth="225.0" text="Calculadora">
          <font>
             <Font size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button layoutX="68.0" layoutY="219.0" mnemonicParsing="false" onAction="#abrirCalculadoraIMC" prefHeight="25.0" prefWidth="225.0" text="Calculadora de IMC">
          <font>
             <Font size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button layoutX="68.0" layoutY="268.0" mnemonicParsing="false" onAction="#abrirGame" prefHeight="25.0" prefWidth="225.0" text="Jogo">
          <font>
             <Font size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <Button layoutX="68.0" layoutY="321.0" mnemonicParsing="false" onAction="#abrirTiro" prefHeight="25.0" prefWidth="225.0" text="Jogo Tiro">
+      <Button layoutX="68.0" layoutY="318.0" mnemonicParsing="false" onAction="#abrirTiro" prefHeight="25.0" prefWidth="225.0" text="Jogo Tiro">
          <font>
             <Font size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="68.0" layoutY="369.0" mnemonicParsing="false" onAction="#abrirMedia" prefHeight="25.0" prefWidth="225.0" text="Calcular Media">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="68.0" layoutY="418.0" mnemonicParsing="false" onAction="#abrirIdade" prefHeight="25.0" prefWidth="225.0" text="Calcular Idade">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
    </children>
 </AnchorPane>
