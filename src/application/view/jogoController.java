@@ -149,6 +149,7 @@ public class jogoController {
 						centroPlayerY<=obsBase;
 						
 				if(colidiu) {
+					
 					pontuacao=0;
 					it.remove();
 				}else if (obs.y>alturaTela) {

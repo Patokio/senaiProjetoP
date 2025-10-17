@@ -25,6 +25,7 @@
       <Label layoutX="29.0" layoutY="250.0" text="Usuário" />
       <Label layoutX="29.0" layoutY="315.0" text="Senha" />
       <Button layoutX="214.0" layoutY="402.0" mnemonicParsing="false" onAction="#entrar" text="Entrar" />
-      <Button layoutX="100.0" layoutY="402.0" mnemonicParsing="false" onAction="#sair" text="Sair" />
+      <Button layoutX="100.0" layoutY="402.0" mnemonicParsing="false" onAction="#sair" prefHeight="25.0" prefWidth="48.0" text="Sair" />
+      <Button fx:id="btnUsuario" layoutX="136.0" layoutY="440.0" mnemonicParsing="false" text="Novo Usuário" />
    </children>
 </AnchorPane>
