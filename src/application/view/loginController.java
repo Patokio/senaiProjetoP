@@ -1,4 +1,5 @@
 package application.view;
+import application.dao.usuarioDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -28,8 +29,9 @@ public class loginController {
 			
 			String usuario = txtUsuario.getText();
 			String senha = txtSenha.getText();
+			usuarioDAO dao = new usuarioDAO();
 		
-			if (usuario.equals("admin") && senha.equals("marina")) {
+			if (dao.autenticar(usuario, senha)) {
 				Alert aviso;
 				aviso = new Alert(Alert.AlertType.CONFIRMATION);
 				aviso.setTitle("Confirmação");
