@@ -12,11 +12,8 @@ import javafx.stage.Stage;
 
 public class loginController {
 	
-	@FXML
-    private PasswordField txtSenha;
-
-    @FXML
-    private TextField txtUsuario;
+	@FXML private PasswordField txtSenha;
+    @FXML private TextField txtUsuario;
     @FXML private Button btnUsuario;
 
 	public void sair() {
