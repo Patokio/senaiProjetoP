@@ -9,32 +9,16 @@ import javafx.scene.control.TextField;
 
 public class calculadoraController {
 
-    @FXML
-    private Button btnDividir;
-
-    @FXML
-    private Button btnMultiplicar;
-
-    @FXML
-    private Button btnSoma;
-
-    @FXML
-    private Button btnSubtrair;
-
-    @FXML
-    private Label lblResultado;
-
-    @FXML
-    private TextField txtPrimeiroNumero;
-
-    @FXML
-    private TextField txtSegundoNumero;
-    
-    @FXML
-    private Button btnResetar;
-    
-    @FXML
-    private Button btnVoltar;
+    @FXML private Button btnDividir;
+    @FXML private Button btnMultiplicar;
+    @FXML private Button btnSoma;
+    @FXML private Button btnSubtrair;
+    @FXML private Label lblResultado;
+    @FXML private TextField txtPrimeiroNumero;
+    @FXML private TextField txtSegundoNumero;
+    @FXML private Button btnResetar;
+    @FXML private Button btnVoltar;
+    @FXML private Label lblImpar;
     
     @FXML
     public void Somar() {
@@ -57,6 +41,11 @@ public class calculadoraController {
     	
     	double resultado = numero1 + numero2;
     	lblResultado.setText(String.valueOf(resultado));
+    	if (resultado % 2 == 0) {
+    		lblImpar.setText("Par");
+    	} else {
+    		lblImpar.setText("Impar");
+    	}
     }
     
     @FXML
@@ -68,6 +57,11 @@ public class calculadoraController {
     	double resultado = numero1 - numero2;
     	
     	lblResultado.setText(String.valueOf(resultado));
+    	if (resultado % 2 == 0) {
+    		lblImpar.setText("Par");
+    	} else {
+    		lblImpar.setText("Impar");
+    	}
     }
     
     @FXML
@@ -77,6 +71,11 @@ public class calculadoraController {
     	double resultado = numero1 * numero2;
     	
     	lblResultado.setText(String.valueOf(resultado));
+    	if (resultado % 2 == 0) {
+    		lblImpar.setText("Par");
+    	} else {
+    		lblImpar.setText("Impar");
+    	}
     }
     
     @FXML
@@ -86,15 +85,20 @@ public class calculadoraController {
     	double resultado = numero1 / numero2;
     	
     	lblResultado.setText(String.valueOf(resultado));
+    	if (resultado % 2 == 0) {
+    		lblImpar.setText("Par");
+    	} else {
+    		lblImpar.setText("Impar");
+    	}
     }
     
     @FXML
     private void initialize() {
     	txtPrimeiroNumero.textProperty().addListener((observable, oldValue, newValue)->{txtPrimeiroNumero.setText(newValue.replaceAll("[^\\d]",""));});
     	txtSegundoNumero.textProperty().addListener((observable, oldValue, newValue)->{txtSegundoNumero.setText(newValue.replaceAll("[^\\d]",""));});
-    	
     	btnResetar.setOnAction(e -> {txtPrimeiroNumero.setText("0");txtSegundoNumero.setText("0");lblResultado.setText("Resultado:");});
     	btnVoltar.setOnAction(e -> {aplicativoController.voltar(btnVoltar);});
+    	
     }
     public static double converterLetraParaNumero(String numero) {
     	try {

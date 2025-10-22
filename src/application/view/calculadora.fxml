@@ -45,12 +45,12 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Label fx:id="lblResultado" layoutX="138.0" layoutY="383.0" text="Resultado">
+      <Label fx:id="lblResultado" layoutX="57.0" layoutY="391.0" text="Resultado">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="btnResetar" layoutX="21.0" layoutY="440.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="318.0" text="Resetar">
+      <Button fx:id="btnResetar" layoutX="22.0" layoutY="447.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="318.0" text="Resetar">
          <font>
             <Font size="18.0" />
          </font>
@@ -58,7 +58,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="btnVoltar" layoutX="21.0" layoutY="488.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="318.0" text="Voltar ao Menu">
+      <Button fx:id="btnVoltar" layoutX="22.0" layoutY="495.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="318.0" text="Voltar ao Menu">
          <font>
             <Font size="18.0" />
          </font>
@@ -66,5 +66,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <Label fx:id="lblImpar" layoutX="220.0" layoutY="391.0" text="Impar/Par">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

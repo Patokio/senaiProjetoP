@@ -29,9 +29,9 @@ public class idadeController {
     		
     		String diaSemanaNasc = nasc.getDayOfWeek().getDisplayName(java.time.format.TextStyle.FULL, java.util.Locale.getDefault());
     		
-    		lblResultado.setText(nome + ", sua idade é: " + idade.getYears() + " anos.");
+    		lblResultado.setText(nome + ", sua idade é: " + idade.getYears() + " anos.\nVocê tem: " + diasVividos + " dias vividos.\n"+ "Dia da semana: " + diaSemanaNasc);
     	} else {
-    		lblResultado.setText("Por favor, insira as infomações nos campos.");
+    		lblResultado.setText("Por favor, insira as infomações nos campos(Nome ou Data de Nascimento).");
     	}
     	//idade = nasc - anoAgora;
     }

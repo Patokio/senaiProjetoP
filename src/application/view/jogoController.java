@@ -102,7 +102,7 @@ public class jogoController {
 		
 		private void desenhar(GraphicsContext gc) {
 			//PLANO DE FUNDO
-			gc.setFill(Color.GRAY);
+			gc.setFill(Color.GREEN);
 			gc.fillRect(0, 0, larguraTela, alturaTela);
 		//
 			gc.drawImage(imagemPlayer, playerX-raio, playerY-raio, raio*4, raio*4);
